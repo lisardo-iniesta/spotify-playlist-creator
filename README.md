@@ -1,140 +1,102 @@
-<h1 align="center">
-  Ìæß Spotify Playlist Creator
-</h1>
+# Spotify Playlist Creator üéß
 
-<p align="center">
-  <strong>Programmatically create curated Spotify playlists from your favorite artists</strong>
-</p>
+A Python tool to programmatically create Spotify playlists from a curated list of artists. Perfect for discovering new music or creating themed playlists quickly.
 
-<p align="center">
-  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.7+-blue.svg" alt="Python 3.7+"></a>
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
-  <a href="https://developer.spotify.com/documentation/web-api/"><img src="https://img.shields.io/badge/Spotify-API-1DB954?logo=spotify" alt="Spotify API"></a>
-</p>
+## Features
 
----
+- üéµ **Artist-based playlist generation** - Add top tracks from multiple artists
+- üîê **Secure OAuth authentication** - Uses Spotify's official authorization flow
+- ‚öôÔ∏è **Configurable** - Customize playlist name, description, and tracks per artist
+- üöÄ **Simple to use** - One command to create a fully populated playlist
 
-## ÌæØ What It Does
+## Quick Start
 
-A lightweight Python CLI tool that creates Spotify playlists by fetching top tracks from a list of artists. Perfect for:
-
-- Ìæµ **Discovering new music** from your favorite genres
-- ‚ö° **Quickly creating themed playlists** (workout, focus, party)
-- Ì¥Ñ **Automating playlist curation** for radio shows or events
-
-## ‚ú® Features
-
-| Feature | Description |
-|---------|-------------|
-| **Artist-based Generation** | Automatically fetches top tracks from multiple artists |
-| **OAuth 2.0 Authentication** | Secure Spotify authorization flow |
-| **Configurable** | Customize playlist name, description, and tracks per artist |
-| **Batch Processing** | Handles 100+ tracks efficiently with API batching |
-
-## Ìª†Ô∏è Tech Stack
-
-- **Python 3.7+** - Core language
-- **[Spotipy](https://spotipy.readthedocs.io/)** - Spotify Web API wrapper
-- **OAuth 2.0** - Secure authentication
-
-## Ì∫Ä Quick Start
-
-### 1. Clone the Repository
-
-\`\`\`bash
-git clone https://github.com/lisardo-iniesta/spotify-playlist-creator.git
-cd spotify-playlist-creator
-\`\`\`
-
-### 2. Set up Spotify API Credentials
+### 1. Set up Spotify API Credentials
 
 1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
 2. Click **Create App**
-   - Redirect URI: \`http://127.0.0.1:8888/callback\`
+   - Name: `Playlist Creator` (or any name)
+   - Description: anything
+   - Redirect URI: `http://127.0.0.1:8888/callback`
 3. Copy your **Client ID** and **Client Secret**
 
-### 3. Install & Configure
+### 2. Install Dependencies
 
-\`\`\`bash
-# Install dependencies
-pip install spotipy
+```bash
+pip install -r requirements.txt
+```
 
-# Set credentials (Linux/Mac)
+### 3. Configure Credentials
+
+Either set environment variables:
+
+```bash
 export SPOTIPY_CLIENT_ID="your_client_id"
 export SPOTIPY_CLIENT_SECRET="your_client_secret"
+```
 
-# Windows PowerShell
-\$env:SPOTIPY_CLIENT_ID="your_client_id"
-\$env:SPOTIPY_CLIENT_SECRET="your_client_secret"
-\`\`\`
+Or edit `create_spotify_playlist.py` directly and replace the placeholder values.
 
-### 4. Run
+### 4. Run the Script
 
-\`\`\`bash
+```bash
 python create_spotify_playlist.py
-\`\`\`
+```
 
-A browser window will open for authorization. Log in and click **Agree**.
+A browser window will open for authorization. Log in to Spotify and click **Agree** to grant access.
 
-## ‚öôÔ∏è Configuration
+## Configuration
 
-Edit \`create_spotify_playlist.py\` to customize your playlist:
+Edit the constants in `create_spotify_playlist.py` to customize:
 
-\`\`\`python
+```python
 # Artists to include
 ARTISTS = [
     "Bonobo",
     "Four Tet",
-    "Caribou",
-    # Add more...
+    # Add more artists...
 ]
 
-# Tracks per artist
+# Tracks per artist (default: 3)
 TRACKS_PER_ARTIST = 3
 
-# Playlist metadata
-PLAYLIST_NAME = "My Custom Playlist Ìæß"
+# Playlist name and description
+PLAYLIST_NAME = "My Custom Playlist üéß"
 PLAYLIST_DESCRIPTION = "Created with Spotify Playlist Creator"
-\`\`\`
+```
 
-## Ì≥∏ Example Output
+## Example Output
 
-\`\`\`
-Ìæµ Spotify Playlist Creator - Electronic Discovery
+```
+üéµ Spotify Playlist Creator - Electronic Discovery
 ==================================================
 
-Ì¥ê Authenticating with Spotify...
-‚úÖ Logged in as: Lisardo (lisardo-iniesta)
+üîê Authenticating with Spotify...
+‚úÖ Logged in as: Your Name (username)
 
-Ì≥ù Creating playlist: Electronic Discovery Ìæß
+üìù Creating playlist: Electronic Discovery üéß
 ‚úÖ Playlist created!
 
-Ì¥ç Searching for artists and their top tracks...
+üîç Searching for artists and their top tracks...
    ‚úÖ Bonobo: 3 tracks - From You, Kong, Cirrus...
    ‚úÖ Four Tet: 3 tracks - VOLVER, Baby again.., glow...
-   ‚úÖ Caribou: 3 tracks - Can't Do Without You, Odessa...
 
-Ìæ∂ Adding 30 tracks to playlist...
+üé∂ Adding 30 tracks to playlist...
 ‚úÖ Tracks added successfully!
 
 ==================================================
-Ìæâ Playlist created successfully!
+üéâ Playlist created successfully!
    URL: https://open.spotify.com/playlist/...
-\`\`\`
 
-## Ì∑∫Ô∏è Roadmap
+Open Spotify and enjoy your new playlist! üéß
+```
 
-- [ ] Add CLI arguments for runtime configuration
-- [ ] Support importing artists from CSV/JSON
-- [ ] Add genre-based playlist generation
-- [ ] Create web interface
+## Requirements
 
-## Ì≥Ñ License
+- Python 3.7+
+- Spotify account (free or premium)
+- Spotify Developer API credentials
 
-MIT License - feel free to use this for personal or commercial projects.
+## License
 
----
-
-<p align="center">
-  Made with ‚ù§Ô∏è by <a href="https://github.com/lisardo-iniesta">Lisardo Iniesta</a>
-</p>
+MIT License - feel free to use and modify!
